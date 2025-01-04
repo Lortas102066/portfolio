@@ -64,35 +64,40 @@ export default function Home() {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-center">Portfolio</h2>
           <Link href="https://scholar.mitsukimorinaga.com" passHref target="_blank">
-            <Card className="bg-white/5 border-0">
-              <div className="aspect-video w-full bg-white/10 rounded-t-lg" />
+            <Card className="bg-white/5 border-0 mb-10">
+              <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
+                <Image
+                  src="/scholarship.jpg"
+                  alt="奨学金マッチングサイト"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                  className="w-full cursor-pointer group-hover:brightness-50 duration-200 object-cover"
+                />
+              </div>
               <div className="p-4">
                 <h3 className="text-lg font-semibold text-white">奨学金マッチングサイト</h3>
                 <p className="text-sm text-gray-400">Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB</p>
               </div>
             </Card>
           </Link>
-          <Card className="bg-white/5 border-0">
-            <div className="aspect-video w-full bg-white/10 rounded-t-lg" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-white">Title</h3>
-              <p className="text-sm text-gray-400">Skill</p>
-            </div>
-          </Card>
-          <Card className="bg-white/5 border-0">
-            <div className="aspect-video w-full bg-white/10 rounded-t-lg" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-white">Title</h3>
-              <p className="text-sm text-gray-400">Skill</p>
-            </div>
-          </Card>
-          <Card className="bg-white/5 border-0">
-            <div className="aspect-video w-full bg-white/10 rounded-t-lg" />
-            <div className="p-4">
-              <h3 className="text-lg font-semibold text-white">Title</h3>
-              <p className="text-sm text-gray-400">Skill</p>
-            </div>
-          </Card>
+          <Link href="https://scholar.mitsukimorinaga.com" passHref target="_blank">
+            <Card className="bg-white/5 border-0">
+              <div className="aspect-video w-full relative overflow-hidden rounded-t-lg">
+                <Image
+                  src="/scholarship.jpg"
+                  alt="Scholar"
+                  width={1280}
+                  height={720}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-white">奨学金マッチングサイト</h3>
+                <p className="text-sm text-gray-400">Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB</p>
+              </div>
+            </Card>
+          </Link>
         </div>
       </div>
     </div>
