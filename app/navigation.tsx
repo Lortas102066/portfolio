@@ -24,7 +24,7 @@ export default function NavigationBar() {
           </li>
           <li>
             <Link 
-              href="/gallery"
+              href="/projects"
               className="p-1.5 hover:bg-gray-100/20 rounded-full transition-colors"
             >
               <Image className="w-4 h-4 text-gray-700" />
