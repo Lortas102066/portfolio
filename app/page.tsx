@@ -1,31 +1,78 @@
-"use client";
+import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Github, Youtube } from 'lucide-react'
+import Image from "next/image"
+import Link from "next/link"
 
-import { navItems } from "@/data";
-
-import Hero from "@/components/Hero";
-import Grid from "@/components/Grid";
-import Footer from "@/components/Footer";
-import Clients from "@/components/Clients";
-import Approach from "@/components/Approach";
-import Experience from "@/components/Experience";
-import RecentProjects from "@/components/RecentProjects";
-import { FloatingNav } from "@/components/ui/FloatingNavbar";
-
-const Home = () => {
+export default function Home() {
   return (
-    <main className="relative bg-black-100 flex justify-center items-center flex-col overflow-hidden mx-auto sm:px-10 px-5">
-      <div className="max-w-7xl w-full">
-        <FloatingNav navItems={navItems} />
-        <Hero />
-        <Grid />
-        <RecentProjects />
-        <Clients />
-        <Experience />
-        <Approach />
-        <Footer />
-      </div>
-    </main>
-  );
-};
+    <div className="min-h-screen bg-gradient-to-b from-gray-800 to-gray-900 text-white px-4 py-8">
+      <div className="max-w-md mx-auto space-y-8">
+        {/* Profile Section */}
+        <div className="flex flex-col items-center space-y-4">
+          <div className="relative w-32 h-32 rounded-full overflow-hidden bg-white">
+            <Image
+              src="/placeholder.svg"
+              alt="Profile"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <div className="text-center">
+            <h1 className="text-2xl font-bold">Mitsuki Morinaga</h1>
+            <p className="text-gray-400">
+              <span className="inline-block align-middle">📍</span> Melbourne, Australia
+            </p>
+          </div>
+        </div>
 
-export default Home;
+        {/* Social Links */}
+        <div className="flex justify-center gap-4">
+          <Link href="#" className="hover:opacity-80">
+            <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+              <span className="sr-only">X (Twitter)</span>
+            </Button>
+          </Link>
+          <Link href="#" className="hover:opacity-80">
+            <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
+              <Github className="w-5 h-5" />
+              <span className="sr-only">GitHub</span>
+            </Button>
+          </Link>
+          <Link href="#" className="hover:opacity-80">
+            <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
+              <Youtube className="w-5 h-5" />
+              <span className="sr-only">YouTube</span>
+            </Button>
+          </Link>
+        </div>
+
+        {/* Self Introduction Button */}
+        <div className="flex justify-center">
+          <Button 
+            variant="outline" 
+            className="rounded-full px-8 bg-white/10 border-0 hover:bg-white/20"
+          >
+            自己紹介
+          </Button>
+        </div>
+
+        {/* Portfolio Section */}
+        <div className="space-y-4">
+          <h2 className="text-2xl font-bold text-center">Portfolio</h2>
+          <Card className="bg-white/5 border-0">
+            <div className="aspect-video w-full bg-white/10 rounded-t-lg" />
+            <div className="p-4">
+              <h3 className="text-lg font-semibold">Title</h3>
+              <p className="text-sm text-gray-400">Skill</p>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  )
+}
+
