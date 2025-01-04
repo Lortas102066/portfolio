@@ -52,12 +52,14 @@ export default function Home() {
 
         {/* Self Introduction Button */}
         <div className="flex justify-center">
-          <Button 
-            variant="outline" 
-            className="rounded-full px-8 bg-white/10 border-0 hover:bg-white/20"
-          >
-            自己紹介
-          </Button>
+          <a href="/profile">
+            <Button 
+              variant="outline" 
+              className="rounded-full px-8 bg-white/10 border-0 hover:bg-white/20"
+            >
+              自己紹介
+            </Button>
+          </a>
         </div>
 
         {/* Portfolio Section */}
