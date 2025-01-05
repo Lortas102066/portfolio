@@ -25,6 +25,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ title, description, techS
         </div>
         <div className="p-4">
           <h3 className="text-lg font-semibold text-white">{title}</h3>
+           <p className="text-sm text-gray-400">{description}</p>
           <p className="text-sm text-gray-400">{techStack}</p>
         </div>
       </Card>
