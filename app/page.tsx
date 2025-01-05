@@ -83,12 +83,12 @@ export default function Home() {
               </div>
             </Card>
           </Link>
-          <Link href="https://scholar.mitsukimorinaga.com" passHref target="_blank">
+          <Link href="https://ecommerce-delta-gules-82.vercel.app" passHref target="_blank">
             <Card className="bg-white/5 border-0">
               <div className="aspect-video w-full relative overflow-hidden rounded-t-lg">
                 <Image
                   src="/scholarship.jpg"
-                  alt="Scholar"
+                  alt="E-Commerce サイト「Stripe」"
                   width={1280}
                   height={720}
                   className="object-cover w-full h-full"
