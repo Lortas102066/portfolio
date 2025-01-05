@@ -15,13 +15,8 @@ import { Github, Youtube } from 'lucide-react'
 import Link from "next/link"
 
 export default function ProfileCard() {
-    const [isMounted, setIsMounted] = useState(false)
     const [isCopied, setIsCopied] = useState(false)
     const email = "mitsukimorinaga@gmail.com";
-
-    useEffect(() => {
-        setIsMounted(true)
-    }, [])
 
     const copyToClipboard = (text: string) => {
         navigator.clipboard.writeText(text).then(() => {
