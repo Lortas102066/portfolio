@@ -28,7 +28,7 @@ export default function ProfileCard() {
     }
 
     return (
-        <div className="min-h-screen bg-zinc-900 text-white px-4 py-8 flex justify-center items-start">
+        <div className="min-h-screen bg-zinc-900 text-white px-4 py-8 flex justify-center items-center">
             <div className="max-w-4xl w-full space-y-8">
                 <div className="flex flex-col items-center space-y-4">
                     <div className="relative w-32 h-32 rounded-full overflow-hidden bg-white">
@@ -94,6 +94,13 @@ export default function ProfileCard() {
                             </Button>
                         </Link>
                     </div>
+                </div>
+                 <div className="text-center text-lg px-4">
+                    <p>
+                        こんにちは！盛長 三喜(Mitsuki Morinaga)と申します。
+                        <br />現在、オーストラリアのMonash Universityで、ソフトウェア開発を専攻しております。
+                        <br />主にNext.JS, Reactを活用したフルスタックWebアプリケーションの開発を行っております。
+                    </p>
                 </div>
                 <TechStack />
             </div>

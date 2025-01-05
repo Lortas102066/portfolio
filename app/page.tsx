@@ -7,17 +7,24 @@ import Link from "next/link";
 const portfolioProjects = [
   {
     title: "奨学金マッチングサイト",
-    description: "Find the best scholarships for you",
-    techStack: "Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB",
+    description: "海外大学向け奨学金マッチングサイト | 成績や保護者の年収を記入するとおすすめの奨学金を提供します",
+    techStack: "AWS(Amplify, Route53) / Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB",
     imageUrl: "/scholarship.jpg",
     projectUrl: "https://scholar.mitsukimorinaga.com"
   },
   {
     title: "E-Commerce サイト「Stripe決済&Micro CMS」",
     description: "Explore our diverse product range",
-    techStack: "React / Stripe / Micro CMS / Tailwind CSS / TypeScript",
+    techStack: "React / Stripe / Micro CMS / Tailwind CSS / TypeScript / Next Auth",
     imageUrl: "/ecommerce.jpg",
     projectUrl: "https://ecommerce-delta-gules-82.vercel.app"
+  }, 
+  {
+    title: "ポモドーロタイマーアプリ",
+    description: "Next.JSを活用したポモドーロWebアプリ",
+    techStack: "Next.JS / TypeScript / Tailwind CSS / Vercel",
+    imageUrl: "/pomodoro.jpg",
+    projectUrl: "https://pomodoro-start.vercel.app/"
   }
 ];
 
@@ -47,7 +54,9 @@ export default function Home() {
         <div className="flex justify-center gap-4">
           <Link href="https://x.com/StudyAbroadAU" passHref>
             <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
-              <Github className="w-5 h-5" />
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
               <span className="sr-only">X (Twitter)</span>
             </Button>
           </Link>
