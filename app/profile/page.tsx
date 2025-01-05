@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import TechStack from '../components/techStack'
 import { Button } from "@/components/ui/button"
