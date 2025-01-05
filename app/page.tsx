@@ -57,7 +57,7 @@ export default function Home() {
               variant="outline" 
               className="rounded-full px-8 bg-white/10 border-0 hover:bg-white/20"
             >
-              自己紹介
+              自己紹介 • Profile 
             </Button>
           </a>
         </div>

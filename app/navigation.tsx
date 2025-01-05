@@ -1,38 +1,55 @@
-import { Home, User, Image } from 'lucide-react'
-import Link from "next/link"
+'use client'
 
-export default function NavigationBar() {
+import * as React from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { Home, User, FolderKanban } from 'lucide-react'
+
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
+
+const navItems = [
+  { name: 'Home', href: '/', icon: Home },
+  { name: 'Profile', href: '/profile', icon: User },
+  { name: 'Projects', href: '/projects', icon: FolderKanban },
+]
+
+export default function Navigation() {
+  const pathname = usePathname()
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 p-2">
-      <nav className="max-w-md mx-auto bg-gradient-to-b from-gray-200 to-gray-300 rounded-full px-12 py-1 shadow-lg">
-        <ul className="flex justify-between items-center">
-          <li>
-            <Link 
-              href="/"
-              className="p-1.5 hover:bg-gray-100/20 rounded-full transition-colors"
-            >
-              <Home className="w-4 h-4 text-gray-700" />
-            </Link>
-          </li>
-          <li>
-            <Link 
-              href="/profile"
-              className="p-1.5 hover:bg-gray-100/20 rounded-full transition-colors"
-            >
-              <User className="w-4 h-4 text-gray-700" />
-            </Link>
-          </li>
-          <li>
-            <Link 
-              href="/projects"
-              className="p-1.5 hover:bg-gray-100/20 rounded-full transition-colors"
-            >
-              <Image className="w-4 h-4 text-gray-700" />
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav
+      className={cn(
+        'fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 ease-in-out',
+        'bg-background/80 backdrop-blur-sm shadow-lg rounded-full'
+      )}
+    >
+      <div className="px-4 py-2">
+        <div className="flex items-center justify-center h-12 space-x-4">
+          {navItems.map((item) => {
+            const Icon = item.icon
+            return (
+              <Button
+                key={item.name}
+                asChild
+                variant="ghost"
+                size="icon"
+                className={cn(
+                  "rounded-full",
+                  pathname === item.href
+                    ? "bg-primary text-primary-foreground"
+                    : "text-foreground hover:text-primary hover:bg-muted"
+                )}
+              >
+                <Link href={item.href} aria-label={item.name}>
+                  <Icon className="h-5 w-5" />
+                </Link>
+              </Button>
+            )
+          })}
+        </div>
+      </div>
+    </nav>
   )
 }
 
