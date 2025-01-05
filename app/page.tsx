@@ -1,8 +1,25 @@
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Github, Youtube } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
+import PortfolioItem from "./components/portfolioItem";
+import { Button } from "@/components/ui/button";
+import { Github, Youtube } from 'lucide-react';
+import Image from "next/image";
+import Link from "next/link";
+
+const portfolioProjects = [
+  {
+    title: "奨学金マッチングサイト",
+    description: "Find the best scholarships for you",
+    techStack: "Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB",
+    imageUrl: "/scholarship.jpg",
+    projectUrl: "https://scholar.mitsukimorinaga.com"
+  },
+  {
+    title: "E-Commerce サイト「Stripe決済&Micro CMS」",
+    description: "Explore our diverse product range",
+    techStack: "React / Stripe / Micro CMS / Tailwind CSS / TypeScript",
+    imageUrl: "/ecommerce.jpg",
+    projectUrl: "https://ecommerce-delta-gules-82.vercel.app"
+  }
+];
 
 export default function Home() {
   return (
@@ -28,21 +45,19 @@ export default function Home() {
 
         {/* Social Links */}
         <div className="flex justify-center gap-4">
-          <Link href="https://x.com/StudyAbroadAU" target="_blank" className="hover:opacity-80">
+          <Link href="https://x.com/StudyAbroadAU" passHref>
             <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
-              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
+              <Github className="w-5 h-5" />
               <span className="sr-only">X (Twitter)</span>
             </Button>
           </Link>
-          <Link href="https://github.com/Lortas102066" className="hover:opacity-80" target="_blank">
+          <Link href="https://github.com/Lortas102066" passHref>
             <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
               <Github className="w-5 h-5" />
               <span className="sr-only">GitHub</span>
             </Button>
           </Link>
-          <Link href="https://www.youtube.com/channel/UC5sjgLo7UFSRkma9QLLU3zw" className="hover:opacity-80" target="_blank">
+          <Link href="https://www.youtube.com/channel/UC5sjgLo7UFSRkma9QLLU3zw" passHref>
             <Button variant="outline" size="icon" className="rounded-full bg-white/10 border-0">
               <Youtube className="w-5 h-5" />
               <span className="sr-only">YouTube</span>
@@ -52,57 +67,24 @@ export default function Home() {
 
         {/* Self Introduction Button */}
         <div className="flex justify-center">
-          <a href="/profile">
+          <Link href="/profile" passHref>
             <Button 
               variant="outline" 
               className="rounded-full px-8 bg-white/10 border-0 hover:bg-white/20"
             >
               自己紹介 • Profile 
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Portfolio Section */}
         <div className="space-y-4">
           <h2 className="text-2xl font-bold text-center">Portfolio</h2>
-          <Link href="https://scholar.mitsukimorinaga.com" passHref target="_blank">
-            <Card className="bg-white/5 border-0 mb-10">
-              <div className="relative aspect-video w-full overflow-hidden rounded-t-lg">
-                <Image
-                  src="/scholarship.jpg"
-                  alt="奨学金マッチングサイト"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                  className="w-full cursor-pointer group-hover:brightness-50 duration-200 object-cover"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">奨学金マッチングサイト</h3>
-                <p className="text-sm text-gray-400">Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB</p>
-              </div>
-            </Card>
-          </Link>
-          <Link href="https://ecommerce-delta-gules-82.vercel.app" passHref target="_blank">
-            <Card className="bg-white/5 border-0">
-              <div className="aspect-video w-full relative overflow-hidden rounded-t-lg">
-                <Image
-                  src="/scholarship.jpg"
-                  alt="E-Commerce サイト「Stripe」"
-                  width={1280}
-                  height={720}
-                  className="object-cover w-full h-full"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="text-lg font-semibold text-white">奨学金マッチングサイト</h3>
-                <p className="text-sm text-gray-400">Next.JS / TypeScript / JavaScript / Next.Auth / MongoDB</p>
-              </div>
-            </Card>
-          </Link>
+          {portfolioProjects.map((project, index) => (
+            <PortfolioItem key={index} {...project} />
+          ))}
         </div>
       </div>
     </div>
-  )
+  );
 }
-
