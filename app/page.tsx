@@ -20,11 +20,18 @@ const portfolioProjects = [
     projectUrl: "https://ecommerce-delta-gules-82.vercel.app"
   }, 
   {
+    title: "WordPress 個人ブログ",
+    description: "プログラミング /  留学 / バスケに関する記事を投稿しています",
+    techStack: "WordPress / PHP / HTML / CSS",
+    imageUrl: "/wordpress.jpg",
+    projectUrl: "https://mickey.okigen.com"
+  }, 
+  {
     title: "ポモドーロタイマーアプリ",
     description: "Next.JSを活用したポモドーロWebアプリ",
     techStack: "Next.JS / TypeScript / Tailwind CSS / Vercel",
     imageUrl: "/pomodoro.jpg",
-    projectUrl: "https://pomodoro-start.vercel.app/"
+    projectUrl: "https://pomodoro-start.vercel.app"
   }
 ];
 
